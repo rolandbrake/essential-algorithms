@@ -1,6 +1,6 @@
 # Practical Reference to Essential Algorithms in PI
 
-An evolving reference project for learning important computer science concepts through implementations in **Pi**, my own programming language.
+An evolving reference project for learning important computer science concepts through implementations in **[Pi](https://github.com/rolandbrake/pilang)**, my own programming language.
 
 The goal is not only to collect algorithms. Every topic should explain the underlying idea, justify its correctness, measure its complexity, test edge cases, and demonstrate useful Pi language features.
 
@@ -402,6 +402,8 @@ The numbering is intentionally omitted so that new topics can be added without r
 - [ ] Heuristics and tradeoffs
 
 ## Pi language learning track
+
+Learn more about the language in the [Pi programming language repository](https://github.com/rolandbrake/pilang).
 
 Each completed topic should teach at least one Pi feature. The examples should gradually introduce Pi instead of assuming readers already know it.
 
