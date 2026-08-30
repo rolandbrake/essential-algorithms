@@ -1,0 +1,68 @@
+import math.{floor,sqrt}
+
+
+// iterative solution (Dynamic programming solution) 
+fun iter_fib(num) {
+    let n = 0, m = 1, r = num
+    
+    for i in 2..num + 1:1 {  // or you can use range(2, num + 1) to remove the ambiguity!
+        r = n + m
+        n = m
+        m = r
+    }           
+    
+    return r
+}
+
+println("iterative solution fibonacci: " + iter_fib(10))
+
+
+// recursive solution
+fun rec_fib(n) {
+    if(n < 2)
+        return n
+    else 
+        return rec_fib(n - 1) + rec_fib(n - 2)
+}
+
+println("recursive solution fibonacci: " + rec_fib(10))
+
+
+fun fast_fib(n) {   
+    fun _fib(n) {
+        
+        
+        if(n <= 0)
+            return (0, 1)
+
+        let half = _fib(floor(n / 2))
+        let a = half[0]
+        let b = half[1]
+
+        let c = a * (2 * b - a)
+        let d = a * a + b * b
+
+        if n % 2             
+            return (d, c + d)
+        else
+            return (c, d)
+            
+        
+    }
+    return _fib(n)[0]
+}
+
+println("fast doubling fibonacci: " + fast_fib(10))
+
+
+
+fun binet_fib(n) {
+  let r_5 = sqrt(5)
+
+  let phi = 1.618034
+  let psi = -0.618034
+
+  return floor((1/r_5) * (phi ** n - psi ** n))
+}
+
+println("binet's formula fibonacci: " + binet_fib(10))

@@ -1,0 +1,13 @@
+fun linear_search(list, item) {
+    for i in range(#list) {        
+        if(list[i] == item)
+            return i
+    }
+    return nil
+    
+}
+
+res = linear_search([1,2,3,4,5], 3)
+
+
+println(res == nil ? "item not found": "item found at: " + res)
