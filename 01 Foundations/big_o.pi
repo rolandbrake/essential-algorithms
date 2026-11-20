@@ -1,0 +1,56 @@
+import math.{floor}
+
+// Big-O describes how the work grows as the input becomes larger.
+// These examples count operations instead of measuring wall-clock time.
+
+fun constant_work(list) {
+    // The input may be very large, but we perform one operation.
+    return 1
+}
+
+fun linear_work(list) {
+    let operations = 0
+
+    for i in range(#list) {
+        operations = operations + 1
+    }
+
+    return operations
+}
+
+fun quadratic_work(list) {
+    let operations = 0
+
+    for i in range(#list) {
+        for j in range(#list) {
+            operations = operations + 1
+        }
+    }
+
+    return operations
+}
+
+fun logarithmic_work(num) {
+    let operations = 0
+    let value = num
+
+    while value > 1 {
+        value = floor(value / 2)
+        operations = operations + 1
+    }
+
+    return operations
+}
+
+let values = [1, 2, 3, 4, 5]
+
+println("O(1): " + constant_work(values))
+println("O(n): " + linear_work(values))
+println("O(n^2): " + quadratic_work(values))
+println("O(log n): " + logarithmic_work(32))
+
+// For an input of size n:
+// constant_work performs 1 operation       -> O(1)
+// linear_work performs n operations        -> O(n)
+// quadratic_work performs n * n operations -> O(n^2)
+// logarithmic_work halves the input        -> O(log n)

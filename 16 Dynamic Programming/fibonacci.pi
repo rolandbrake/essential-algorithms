@@ -34,10 +34,8 @@ fun fast_fib(n) {
         
         if(n <= 0)
             return (0, 1)
-
-        let half = _fib(floor(n / 2))
-        let a = half[0]
-        let b = half[1]
+        let a, b
+        (a, b) = _fib(floor(n / 2))
 
         let c = a * (2 * b - a)
         let d = a * a + b * b

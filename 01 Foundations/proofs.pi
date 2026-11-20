@@ -1,0 +1,57 @@
+// Algorithms should be correct for every valid input, not only the examples
+// used during development. Proofs give us confidence in that claim.
+
+// Induction example:
+// The sum of the first n positive integers is n * (n + 1) / 2.
+//
+// Base case: for n = 0, both sides are 0.
+// Inductive step: if the formula is true for n, then
+// sum(n + 1) = sum(n) + (n + 1)
+//             = n * (n + 1) / 2 + (n + 1)
+//             = (n + 1) * (n + 2) / 2.
+
+fun sumto_n(n) {
+    let result = 0
+
+    for value in 1..n + 1:1 {
+        result = result + value
+    }
+
+    return result
+}
+
+fun formula(n) {
+    return n * (n + 1) / 2
+}
+
+// verification for the induction examples 
+fun verify_induction(limit) {
+    // Checking several values is not a mathematical proof by itself,
+    // but it makes the inductive claim executable and testable.
+    for n in 0..limit + 1:1 {
+        if sumto_n(n) != formula(n)
+            return false
+    }
+
+    return true
+}
+
+println("Induction formula verified: " + verify_induction(100))
+
+// Proof by contradiction example:
+// An integer cannot be both even and odd. If n is even, n % 2 is 0.
+// If n is odd, n % 2 is 1. These conclusions contradict one another.
+
+fun is_even(n) {
+    return n % 2 == 0
+}
+
+fun is_odd(n) {
+    return n % 2 != 0
+}
+
+fun is_bothEvenOdd(n) {
+    return is_even(n) and is_odd(n)
+}
+
+println("Contradiction check: " + is_bothEvenOdd(10) == false)

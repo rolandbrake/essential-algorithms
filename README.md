@@ -1,6 +1,6 @@
 # Practical Reference to Essential Algorithms in PI
 
-An evolving reference project for learning important computer science concepts through implementations in **[Pi](https://github.com/rolandbrake/pilang)**, my own programming language.
+An evolving reference project for learning important computer science concepts through implementations in **[Pilang](https://github.com/rolandbrake/pilang)**, my own programming language.
 
 The goal is not only to collect algorithms. Every topic should explain the underlying idea, justify its correctness, measure its complexity, test edge cases, and demonstrate useful Pi language features.
 
@@ -13,7 +13,6 @@ The project is organized into four levels:
 3. **Advanced**  specialized algorithms and deeper theory.
 4. **Systems and applications**  algorithms used in compilers, operating systems, databases, and distributed systems.
 
-The numbering is intentionally omitted so that new topics can be added without renumbering the entire roadmap.
 
 ## Topic checklist
 
@@ -507,11 +506,5 @@ Algorithms/
 - Record Pi-specific limitations or implementation details honestly.
 - Use benchmarks to support claims, not to replace complexity analysis.
 
-## Current progress
-
-- [x] Linear search
-- [x] Binary search
-- [x] Factorial
-- [x] Fibonacci: iterative, recursive, fast doubling, and Binet implementations
 
 This roadmap is intentionally larger than the first version of the project. Implement it incrementally, and make each completed section useful reference material rather than merely a checklist.
